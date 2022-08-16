@@ -1,0 +1,28 @@
+<div class="course-item" *ngFor="let item of items; index as i; trackBy: trackById" >
+    <div class="flex">
+        <span class="title">{{items[i].title}}</span>
+        <div class="flex-contain">
+            <span class="grey-txt pad">
+                <img src="../../../assets/clock.svg" alt="" class="icon"> 
+                {{items[i].duration | duration}} 
+            </span>
+            <span class="grey-txt pad">
+                <img src="../../../assets/Calendar.svg" alt="" class="icon">
+                 {{items[i].creationDate | date: 'MM/dd/yyyy'}}</span>
+        </div>
+    </div>
+
+    <div class="flex">
+        <span class="details">{{items[i].description}}</span>
+        <div class="flex-contain">
+            <button class="btn"><img src="../../../assets/Edit.svg" alt="" class="icon "> Edit</button>
+            <button class="btn" (click) = "onDelete()"><img src="../../../assets/Delete.svg" alt="" class="icon"> Delete</button>
+        </div>
+    </div>
+</div>
+
+<div class="course-item">
+    <a href="#!" (click) = "load()">Load more</a>
+</div>
+
+<div class="bottom"></div>

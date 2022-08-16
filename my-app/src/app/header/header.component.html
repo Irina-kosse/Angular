@@ -1,1 +1,17 @@
-<p>header works!</p>
+<app-logo></app-logo>
+<div class="spacer"></div>
+<div class="flex">
+    <div class="flex-row">
+        <button class="btn" value="login" (click) = "onLogin($event)">
+            <img src="../../assets/User.svg" alt="" class="icon">
+        </button> 
+        <p>User login</p>
+    </div>
+    <div class="flex-row">
+        <button class="btn" value="logout" (click) = "onLogout($event)">
+            <img src="../../assets/LogOut.svg" alt="" class="icon">
+        </button>
+        <p>Log out</p>
+    </div>
+    
+</div>
