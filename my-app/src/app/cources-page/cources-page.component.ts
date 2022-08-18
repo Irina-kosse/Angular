@@ -9,7 +9,7 @@ export class CourcesPageComponent implements OnInit {
   constructor() {}
   itemsArray: Array<Course> = [];
   searchInput: string = '';
-  itemTodelete: string = '';
+  itemTodelete: number = 0;
 
   ngOnInit(): void {
     this.itemsArray = [
@@ -46,7 +46,7 @@ export class CourcesPageComponent implements OnInit {
         future Express projects.`,
       },
       {
-        id: 1,
+        id: 2,
         title: 'Angular Essential Training',
         creationDate: new Date('01/07/2019'),
         duration: 210,
@@ -69,10 +69,8 @@ export class CourcesPageComponent implements OnInit {
     console.log(this.searchInput);
   }
 
-  deleteItem(event: any) {}
-
-  handleDelete(valueEmitted: string) {
+  handleDelete(valueEmitted: number) {
     this.itemTodelete = valueEmitted;
-    console.log(this.itemTodelete);
+    console.log(`id: ${this.itemsArray[this.itemTodelete].id}`);
   }
 }

@@ -15,9 +15,8 @@ export class CourseItemComponent implements OnInit {
     console.log('Load more');
   }
 
-  onDelete(): void {
-    this.delete.emit('From child');
-    console.log();
+  onDelete(i: number): void {
+    this.delete.emit(i);
   }
 
   ngOnInit(): void {}
