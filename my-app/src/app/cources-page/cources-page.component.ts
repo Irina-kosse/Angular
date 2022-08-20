@@ -1,5 +1,7 @@
 import { Component, OnInit, NgModule, Output } from '@angular/core';
 import { Course } from '../interfaces';
+import { DurationPipe } from '../pipes/duration.pipe';
+import { FilterPipe } from '../pipes/filter.pipe';
 @Component({
   selector: 'app-cources-page',
   templateUrl: './cources-page.component.html',
@@ -10,13 +12,14 @@ export class CourcesPageComponent implements OnInit {
   itemsArray: Array<Course> = [];
   searchInput: string = '';
   itemTodelete: number = 0;
+  searchFilter: FilterPipe = new FilterPipe();
 
   ngOnInit(): void {
     this.itemsArray = [
       {
         id: 0,
         title: 'Databases for Node.JS Developers',
-        creationDate: new Date('01/08/2021'),
+        creationDate: new Date('09/08/2022'),
         duration: 214,
         description: `Node.js developers often consider MongoDB to be 
         their main choice when building a data-driven application—but 
@@ -27,6 +30,7 @@ export class CourcesPageComponent implements OnInit {
         databases, and explains how—and when—to use document databases with 
         Node.js. He also covers using key-value stores and relational databases 
         with Node.js, demonstrating how to work with MySQL and Sequelize.`,
+        topRated: false,
       },
       {
         id: 1,
@@ -44,12 +48,13 @@ export class CourcesPageComponent implements OnInit {
         securing your application. A complete startup project is included in the exercise 
         files, so you can follow along with the lessons and have a solid foundation for 
         future Express projects.`,
+        topRated: true,
       },
       {
         id: 2,
         title: 'Angular Essential Training',
-        creationDate: new Date('01/07/2019'),
-        duration: 210,
+        creationDate: new Date('08/12/2022'),
+        duration: 21,
         description: `Angular was designed by Google to address challenges programmers 
         face building complex, single-page applications. This JavaScript platform 
         provides a solid core of web functionality, letting you take care of the design 
@@ -61,12 +66,17 @@ export class CourcesPageComponent implements OnInit {
         as Justin builds a full-featured web app from start to finish. After mastering 
         the essentials, you can tackle the other project-based courses in our library and 
         create your own Angular app.`,
+        topRated: false,
       },
     ];
   }
 
   search() {
     console.log(this.searchInput);
+    this.itemsArray = this.searchFilter.transform(
+      this.itemsArray,
+      this.searchInput
+    );
   }
 
   handleDelete(valueEmitted: number) {

@@ -1,19 +1,24 @@
-<div class="course-item" *ngFor="let item of items; index as i; trackBy: trackById" >
+<div class="course-item" *ngFor="let item of items | sortBy: 'creationDate' : 'asc'; index as i; trackBy: trackById" 
+    [appBorderColor]="item.creationDate"
+    [ngClass]="{'biege': item.topRated}">
     <div class="flex">
-        <span class="title">{{items[i].title}}</span>
+        <div>
+            <span class="title">{{item.title | uppercase}}</span>
+            <span *ngIf="item.topRated"><img src="../../../assets/star-icon.svg" alt="" class="icon"></span>
+        </div>
         <div class="flex-contain">
             <span class="grey-txt pad">
                 <img src="../../../assets/clock.svg" alt="" class="icon"> 
-                {{items[i].duration | duration}} 
+                {{item.duration | duration}} 
             </span>
             <span class="grey-txt pad">
                 <img src="../../../assets/Calendar.svg" alt="" class="icon">
-                 {{items[i].creationDate | date: 'MM/dd/yyyy'}}</span>
+                 {{item.creationDate | date: 'MM/dd/yyyy'}}</span>
         </div>
     </div>
 
     <div class="flex">
-        <span class="details">{{items[i].description}}</span>
+        <span class="details">{{item.description}}</span>
         <div class="flex-contain">
             <button class="btn"><img src="../../../assets/Edit.svg" alt="" class="icon "> Edit</button>
             <button class="btn" (click) = "onDelete(i)"><img src="../../../assets/Delete.svg" alt="" class="icon"> Delete</button>
@@ -21,8 +26,12 @@
     </div>
 </div>
 
-<div class="course-item">
+<div class="course-item center" *ngIf="items.length > 1">
     <a href="#!" (click) = "load()">Load more</a>
 </div>
 
+
+<div class="course-item center" *ngIf="items.length === 0">
+    <span>No data. Please feel free to add new courses.</span>
+</div>
 <div class="bottom"></div>
