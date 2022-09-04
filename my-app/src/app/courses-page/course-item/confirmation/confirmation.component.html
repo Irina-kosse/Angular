@@ -1,0 +1,13 @@
+
+<div id="modal-content-wrapper">
+    <header id="modal-header">
+        <h1 id="modal-title">Do you really want to delete this course?</h1>
+    </header>
+    <section id="modal-body">
+        <p>This action can't be canceled.</p>
+    </section>
+    <footer id="modal-footer">
+        <button mat-raised-button id="modal-action-button" (click) = "onDelete()">Yes</button>
+        <button mat-raised-button id="modal-cancel-button" (click) = "closeModal()">No</button>
+    </footer>
+</div>

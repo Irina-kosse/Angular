@@ -91,6 +91,7 @@ describe('TrackBy method', () => {
         creationDate: new Date('18/07/2021'),
         description: 'new course',
         duration: 80,
+        topRated: true,
       },
       {
         id: 2,
@@ -98,6 +99,7 @@ describe('TrackBy method', () => {
         creationDate: new Date('18/07/2021'),
         description: 'new course',
         duration: 80,
+        topRated: false,
       },
     ];
     const obj = component.trackById(i, items);

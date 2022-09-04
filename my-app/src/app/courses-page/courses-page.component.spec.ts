@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CourcesPageComponent } from './cources-page.component';
+import { CoursesPageComponent } from './courses-page.component';
 
-describe('CourcesPageComponent', () => {
-  let component: CourcesPageComponent;
-  let fixture: ComponentFixture<CourcesPageComponent>;
+describe('CoursesPageComponent', () => {
+  let component: CoursesPageComponent;
+  let fixture: ComponentFixture<CoursesPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CourcesPageComponent],
+      declarations: [CoursesPageComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CourcesPageComponent);
+    fixture = TestBed.createComponent(CoursesPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,15 +22,15 @@ describe('CourcesPageComponent', () => {
 });
 
 describe('Search method', () => {
-  let component: CourcesPageComponent;
-  let fixture: ComponentFixture<CourcesPageComponent>;
+  let component: CoursesPageComponent;
+  let fixture: ComponentFixture<CoursesPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CourcesPageComponent],
+      declarations: [CoursesPageComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CourcesPageComponent);
+    fixture = TestBed.createComponent(CoursesPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -44,15 +44,15 @@ describe('Search method', () => {
 });
 
 describe('Search method', () => {
-  let component: CourcesPageComponent;
-  let fixture: ComponentFixture<CourcesPageComponent>;
+  let component: CoursesPageComponent;
+  let fixture: ComponentFixture<CoursesPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [CourcesPageComponent],
+      declarations: [CoursesPageComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CourcesPageComponent);
+    fixture = TestBed.createComponent(CoursesPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
 
@@ -60,7 +60,7 @@ describe('Search method', () => {
   });
 
   it('should console log', () => {
-    component.handleDelete(component.itemTodelete);
+    component.handleDelete(component.itemToDelete);
     expect(console.log).toHaveBeenCalled();
   });
 });

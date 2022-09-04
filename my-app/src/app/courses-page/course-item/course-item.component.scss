@@ -44,7 +44,7 @@
     background: #009ecd;
     color: #fff;
     font-size: 14px;
-    padding: 6px 12px;
+    padding: 0 12px;
     display: flex;
     cursor: pointer;
 }
@@ -62,12 +62,18 @@
     width: 16px;
     height: 16px;
     color: #fff;
-    padding: 0 6px 0 6px;
+    font-size: 12px;
 }
 
 .bottom {
     padding-bottom: 60px;
 }
-.biege {
+.beige {
     background-color: rgb(252, 251, 236);
 }
+
+mat-dialog-container#modal-component {
+    border: 3px solid #f5f6fa;
+    border-radius: 11px;
+    background-color: #f5f6fa;
+  }

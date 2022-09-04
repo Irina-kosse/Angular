@@ -1,6 +1,6 @@
-<div class="course-item" *ngFor="let item of items | sortBy: 'creationDate' : 'asc'; index as i; trackBy: trackById" 
+<div class="course-item" *ngFor="let item of items | sortBy: 'creationDate' : 'desc'; index as i; trackBy: trackById" 
     [appBorderColor]="item.creationDate"
-    [ngClass]="{'biege': item.topRated}">
+    [ngClass]="{'beige': item.topRated}">
     <div class="flex">
         <div>
             <span class="title">{{item.title | uppercase}}</span>
@@ -20,8 +20,11 @@
     <div class="flex">
         <span class="details">{{item.description}}</span>
         <div class="flex-contain">
-            <button class="btn"><img src="../../../assets/Edit.svg" alt="" class="icon "> Edit</button>
-            <button class="btn" (click) = "onDelete(i)"><img src="../../../assets/Delete.svg" alt="" class="icon"> Delete</button>
+                <button mat-raised-button class="btn"><img src="../../../assets/Edit.svg" alt="" class="icon ">
+                     Edit</button>
+            <button mat-raised-button id="delete-button" class="btn" (click) = "onDelete(i)">
+                <img src="../../../assets/Delete.svg" alt="" class="icon"> 
+                Delete</button>
         </div>
     </div>
 </div>

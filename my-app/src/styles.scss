@@ -44,3 +44,6 @@ body {
          url('./assets/fonts/open-sans-v29-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
          url('./assets/fonts/open-sans-v29-latin-700.svg#OpenSans') format('svg'); /* Legacy iOS */
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
