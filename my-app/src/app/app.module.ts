@@ -16,6 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConfirmationComponent } from './courses-page/course-item/confirmation/confirmation.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { DataService } from '../app/services/data.service';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataService, {
+      dataEncapsulation: false,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

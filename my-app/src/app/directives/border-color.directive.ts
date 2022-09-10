@@ -12,7 +12,6 @@ export class BorderColorDirective {
 
   ngOnInit(): void {
     this.color = this.chooseColor(this.date);
-    console.log(this.color);
     this.highlight(this.color);
   }
 
