@@ -46,6 +46,6 @@ export class CoursesPageComponent implements OnInit {
       console.log('course was deleted ' + res);
     });
 
-    //this.itemsArray = this.coursesService.getList();
+    this.getCourses();
   }
 }

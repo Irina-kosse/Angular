@@ -63,7 +63,7 @@ export class DataService implements InMemoryDbService {
         topRated: false,
       },
       {
-        id: 4,
+        id: 3,
         title: 'Designing RESTful APIs',
         creationDate: new Date('09/12/2022'),
         duration: 80,
@@ -79,7 +79,7 @@ export class DataService implements InMemoryDbService {
         topRated: false,
       },
       {
-        id: 5,
+        id: 4,
         title: 'GraphQL Essential Training',
         creationDate: new Date('11/04/2020'),
         duration: 116,
@@ -92,7 +92,7 @@ export class DataService implements InMemoryDbService {
         topRated: true,
       },
       {
-        id: 6,
+        id: 5,
         title: 'Building a Website with Node.js and Express.js',
         creationDate: new Date('1/10/2020'),
         duration: 190,
